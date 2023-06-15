@@ -1,0 +1,21 @@
+Import java.util.stream.IntStream;
+
+Public class MultiplesDisplay {
+    Public static void main(String[] args) {
+        System.out.println(“Multiples of 2:”);
+        displayMultiplesUsingStreams(71, 150, 2);
+
+        System.out.println(“\nMultiples of 3:”);
+        displayMultiplesUsingStreams(71, 150, 3);
+
+        System.out.println(“\nMultiples of 7:”);
+        displayMultiplesUsingStreams(71, 150, 7);
+    }
+
+    Public static void displayMultiplesUsingStreams(int start, int end, int number) {
+        IntStream.rangeClosed(start, end)
+                .filter(n -> n % number == 0)
+                .forEach(n -> System.out.print(n + “ “));
+    }
+}
+
